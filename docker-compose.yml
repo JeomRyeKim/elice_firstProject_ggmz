@@ -20,7 +20,10 @@ services:
       - db_data:/data/db
 
   nodejs:
-    build: ./deployment/nodejs
+    build:
+      context: .
+      dockerfile: ./deployment/nodejs/Dockerfile
+
     container_name: nodejs
     ports:
       - "5000:5000"
