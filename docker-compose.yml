@@ -15,7 +15,7 @@ services:
     image: mongo:4.4
     container_name: mongodb
     ports:
-      - "27017:27017"
+      - "27017"
     volumes:
       - db_data:/data/db
 
@@ -26,7 +26,7 @@ services:
 
     container_name: nodejs
     ports:
-      - "5000:5000"
+      - "5000"
     depends_on:
       - mongodb
     environment:
@@ -35,7 +35,6 @@ services:
     volumes:
       - ./:/usr/src/app
       - /usr/src/app/node_modules
-      - ./node_modules:/usr/src/app/node_modules
 
 volumes:
   db_data:
